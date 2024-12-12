@@ -24,7 +24,7 @@ const CradList = () => {
   return (
     cardItem.map((item)=>(
       
-        <Link to={"/watch?v="+item.id }key={item.id} >< VideoCard  info={item}/></Link>
+        <Link to={"watch?v="+item.id }key={item.id} >< VideoCard  info={item}/></Link>
      
     ))
 

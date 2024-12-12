@@ -15,11 +15,11 @@ function App() {
       element: <Body/>,
       children:[
         {
-          path: "/video_streaming_app",
+          path: "",
         element: <MainContainer/>
         },
         {
-          path: "watch",
+          path: "Watch",
         element: <WatchPage/>,
         }
       ],
