@@ -28,7 +28,7 @@ function App() {
   return (
     <div className="App">
      
-      <Provider store={AppStore}>
+      <Provider basename="/youtube_testing_github" store={AppStore}>
 
       <Header/>
       <RouterProvider router={router}>

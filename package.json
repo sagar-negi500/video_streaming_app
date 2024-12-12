@@ -1,7 +1,7 @@
 {
   "name": "youtube",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "https://sagar-negi500.github.io/youtube_testing_github/",
   "dependencies": {
     "@reduxjs/toolkit": "^2.3.0",
