@@ -2,7 +2,7 @@
   "name": "youtube",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://sagar-negi500.github.io/youtube_testing_github/",
+  "homepage": "https://sagar-negi500.github.io/video_streaming_app/",
   "dependencies": {
     "@reduxjs/toolkit": "^2.3.0",
     "@testing-library/jest-dom": "^5.17.0",

@@ -13,7 +13,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const [Search, setSearch] = useState("");
   const [Suggestion, setSuggestion] = useState([]);
-  const [Showsuggestion, setShowSuggestion] = useState("false");
+  const [Showsuggestion, setShowSuggestion] = useState(false);
   console.log(Search);
 
   const SearchCache=useSelector((store)=>store.Search)
@@ -31,6 +31,24 @@ const Header = () => {
       clearTimeout(Timer);
     };
   }, [Search]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Hide the suggestion box when the page is scrolled
+      if (window.scrollY > 0) {
+        setShowSuggestion(false);
+      } else {
+        setShowSuggestion(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const getSuggestion = async () => {
     const data = await fetch(YOUTUBE_SUGGESTION_API + Search);
@@ -67,13 +85,13 @@ const Header = () => {
             onFocus={()=>setShowSuggestion(true)}
             onBlur={()=>setShowSuggestion(false)}
           />
-          <CiSearch className=" text-2xl border-2  p=8 rounded-r-full" />
+          <CiSearch className=" text-2xl border-2   rounded-r-full" />
         </div>
         {Showsuggestion && (
-          <div className="fixed shadow-2xl bg-white w-[20%] p-4">
-            <ul>
+          <div className="fixed top-12 shadow-2xl bg-white w-[20%] ">
+            <ul className="">
               {Suggestion.map((item, index) => (
-                <li key={index}>🔎 {item}</li>
+                <li className="p-1" key={index}>🔎 {item}</li>
               ))}
             </ul>
           </div>

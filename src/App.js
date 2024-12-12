@@ -11,11 +11,11 @@ import WatchPage from './componets/WatchPage';
 function App() {
   const router=createBrowserRouter([
     {
-      path:"/youtube_testing_github",
+      path:"/video_streaming_app",
       element: <Body/>,
       children:[
         {
-          path: "/youtube_testing_github",
+          path: "/video_streaming_app",
         element: <MainContainer/>
         },
         {
@@ -28,7 +28,7 @@ function App() {
   return (
     <div className="App">
      
-      <Provider basename="/youtube_testing_github" store={AppStore}>
+      <Provider basename="/video_streaming_app" store={AppStore}>
 
       <Header/>
       <RouterProvider router={router}>
