@@ -11,11 +11,11 @@ import WatchPage from './componets/WatchPage';
 function App() {
   const router=createBrowserRouter([
     {
-      path:"/",
+      path:"/youtube_testing_github",
       element: <Body/>,
       children:[
         {
-          path: "/",
+          path: "/youtube_testing_github",
         element: <MainContainer/>
         },
         {
